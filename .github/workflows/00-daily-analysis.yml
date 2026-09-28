@@ -34,8 +34,8 @@ jobs:
     # 兼容误将 STOCK_LIST 配到同名 Environment variables 的场景；
     # 推荐位置仍是 Settings -> Secrets and variables -> Actions -> Repository variables。
     environment: STOCK_LIST
-    # 添加超时限制，防止任务卡死；未配置仓库变量时默认 60 分钟
-    timeout-minutes: ${{ fromJSON(vars.ANALYSIS_TIMEOUT_MINUTES || '60') }}
+    # 添加超时限制，防止任务卡死
+    timeout-minutes: 60
     
     steps:
       - name: 随机延迟（避免固定时间访问）
